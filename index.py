@@ -51,6 +51,9 @@ def main():
     imagen1 = []
     nombres = []
     numero_po = []
+    havilidades = []
+    altura1 = []
+    peso1 = [] 
 
     for numero in range(0, 6):
         print(numero)
@@ -75,14 +78,17 @@ def main():
         pokemon_type = [types['type']['name'] for types in data['types']]
     
         prueba.append(' ,'.join(pokemon_type))
+        havilidades.append(abilidades_po)
+        altura1.append(altura_po)
         imagen1.append(imagen)
         nombres.append(nombre_po)
         numero_po.append(pokemon_name)
+        peso1.append(peso_po)
 
     
 
 
-    return render_template('index.html' ,len = len(nombres), imagen=imagen1, nombre=nombres, tipo=prueba, Habilidades=abilidades_po, altura=altura_po, peso=peso_po , numero =numero_po)
+    return render_template('index.html' ,len = len(nombres), imagen=imagen1, nombre=nombres, tipo=prueba, Habilidades=havilidades, altura=altura1, peso=peso1 , numero =numero_po)
 
 
 def get_pokemon_data(url_pokemon=''):
